@@ -27,8 +27,11 @@ defmodule GG do
       false -> File.touch(log)
     end
     {:ok, file} = File.open(log, [:append])
-    IO.binwrite(file, [output])
-    :ok = File.close(file)
+    [{:registered_name, rn}] = :erlang.process_info(self(), [:registered_name])
+     time = :calendar.now_to_universal_time(:erlang.now())
+     :ok = :io.fwrite(file, "On ~p as {~p, ~p} at ~p~n- ~s~n",
+       [node(), self(), rn, time, output])
+     :ok = File.close(file)
   end
 
 end
