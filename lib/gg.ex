@@ -14,7 +14,7 @@ defmodule GG do
   end
 
   def format(format, term) when is_binary(format) do
-    output = List.flatten(:io_lib.format(format, [term]))
+    output = List.flatten(:io_lib.format(format, term))
     :ok = to_disk(output)
   end
 
