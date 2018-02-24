@@ -19,7 +19,6 @@ defmodule GG do
   end
 
   defp to_disk(output) do
-    IO.inspect output
     # Macros and shit prevent you using an attribute in File.open
     log = @logfile
     case File.exists?(log) do
