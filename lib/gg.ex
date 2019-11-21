@@ -69,7 +69,7 @@ defmodule GG do
                            :true  -> Path.join([root, dir, appname, path_ext, srcfile])
                            :false -> Path.join([root, dir, path_ext, srcfile])
                           end
-               :false -> :not_foundxxx
+               :false -> :not_found
             end
     end
   end
