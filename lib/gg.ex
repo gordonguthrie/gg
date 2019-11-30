@@ -81,7 +81,7 @@ defmodule GG do
 
   defp extract(list), do: ext2(list, [])
 
-  defp ext2(["_build", "dev", "lib" | t], acc) do
+  defp ext2(["_build", _env, "lib" | t], acc) do
      root = Enum.join(["/", Path.join(Enum.reverse(acc))])
      [beamname, _ebin, appname] = Enum.reverse(t)
      {path_ext, srcfile} = parse(beamname)
