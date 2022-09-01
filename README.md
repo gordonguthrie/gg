@@ -4,12 +4,12 @@
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `gg` to your list of dependencies in `mix.exs`:
+If it was [available in Hex](https://hex.pm/docs/publish), the package could be installed
+by adding `gg` to your list of dependencies in `mix.exs` as per normal, but it isn't, so...
 
 ```elixir
 def deps do
-  [{:gg, "~> 0.1.0"}]
+  [{:gg, git: "https://github.com/gordonguthrie/gg.git"}]
 end
 ```
 
